@@ -12,7 +12,7 @@ pin_run_as_build:
   libiconv:
     max_pin: x.x
   readline:
-    max_pin: x.x
+    max_pin: x
   sqlite:
     max_pin: x
 readline:
