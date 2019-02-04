@@ -3,13 +3,13 @@ MACOSX_DEPLOYMENT_TARGET:
 bzip2:
 - '1'
 c_compiler:
-- toolchain_c
+- clang
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- toolchain_cxx
+- clangxx
 libiconv:
 - '1.15'
 macos_machine:
