@@ -1,6 +1,6 @@
 {% set name = "gnupg" %}
-{% set version = "2.2.15" %}
-{% set sha256 = "cb8ce298d7b36558ffc48aec961b14c830ff1783eef7a623411188b5e0f5d454" %}
+{% set version = "2.2.17" %}
+{% set sha256 = "afa262868e39b651a2db4c071fba90415154243e83a830ca00516f9a807fd514" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script:
     - export CPPFLAGS="-DIN_EXCL_UNLINK=0x04000000 $CPPFLAGS"  # [linux]
     - export LDFLAGS="-lrt $LDFLAGS"                           # [linux]
