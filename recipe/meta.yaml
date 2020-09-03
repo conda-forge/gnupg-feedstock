@@ -1,6 +1,6 @@
 {% set name = "gnupg" %}
-{% set version = "2.2.22" %}
-{% set sha256 = "7c1370565e1910b9d8c4e0fb57b9de34aa062ec7bb91abad5803d791f38d855b" %}
+{% set version = "2.2.23" %}
+{% set sha256 = "10b55e49d78b3e49f1edb58d7541ecbdad92ddaeeb885b6f486ed23d1cd1da5c" %}
 
 package:
   name: {{ name|lower }}
