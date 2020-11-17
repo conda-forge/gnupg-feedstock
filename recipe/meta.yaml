@@ -1,6 +1,6 @@
 {% set name = "gnupg" %}
-{% set version = "2.2.22" %}
-{% set sha256 = "7c1370565e1910b9d8c4e0fb57b9de34aa062ec7bb91abad5803d791f38d855b" %}
+{% set version = "2.2.24" %}
+{% set sha256 = "9090b400faae34f08469d78000cfec1cee5b9c553ce11347cc96ef16eab98c46" %}
 
 package:
   name: {{ name|lower }}
@@ -47,8 +47,6 @@ requirements:
 test:
   commands:
     - gpg --help
-    - conda inspect linkages {{ name }}  # [unix]
-    - conda inspect objects {{ name }}   # [osx]
 
 about:
   home: https://www.gnupg.org
