@@ -5,7 +5,7 @@ Home: https://www.gnupg.org
 
 Package license: LGPL-3
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gnupg-feedstock/blob/master/LICENSE.txt)
 
 Summary: The New GNU Privacy Guard
 
