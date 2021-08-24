@@ -28,7 +28,7 @@ pin_run_as_build:
   sqlite:
     max_pin: x
 readline:
-- '8.0'
+- '8'
 sqlite:
 - '3'
 target_platform:
