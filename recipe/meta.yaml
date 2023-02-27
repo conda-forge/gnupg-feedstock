@@ -13,12 +13,6 @@ source:
 
 build:
   number: 0
-  script:
-    - export CPPFLAGS="-DIN_EXCL_UNLINK=0x04000000 $CPPFLAGS"  # [linux]
-    - export LDFLAGS="-lrt $LDFLAGS"                           # [linux]
-    - ./configure --prefix="$PREFIX"
-    - make
-    - make install
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('gnupg', max_pin='x.x') }}
