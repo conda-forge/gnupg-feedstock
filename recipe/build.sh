@@ -7,6 +7,9 @@ if [[ $(uname) == Linux ]]; then
     export LDFLAGS="-lrt $LDFLAGS"
 fi
 
-./configure --prefix="$PREFIX"
+./configure \
+    --prefix="$PREFIX" \
+    --with-libgpg-error-prefix="$PREFIX" \
+    --with-ntbtls-prefix="$PREFIX"
 make
 make install
