@@ -26,7 +26,7 @@ requirements:
     - bzip2
     - sqlite
     - libgcrypt
-    - libgpg-error <1.46
+    - libgpg-error
     - libksba
     - libassuan
     - ntbtls
