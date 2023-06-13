@@ -1,18 +1,16 @@
 {% set name = "gnupg" %}
 {% set version = "2.4.2" %}
-{% set sha256 = "97eb47df8ae5a3ff744f868005a090da5ab45cb48ee9836dbf5ee739a4e5cf49" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-{{ version }}.tar.bz2
-  sha256: {{ sha256 }}
+  sha256: 97eb47df8ae5a3ff744f868005a090da5ab45cb48ee9836dbf5ee739a4e5cf49
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('gnupg', max_pin='x.x') }}
