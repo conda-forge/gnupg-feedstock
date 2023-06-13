@@ -19,9 +19,11 @@ build:
 
 requirements:
   build:
+    - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make  # [unix]
+    - libgpg-error  # [build_platform != target_platform]
   host:
     - bzip2
     - sqlite
