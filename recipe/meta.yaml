@@ -1,6 +1,6 @@
 {% set name = "gnupg" %}
-{% set version = "2.3.6" %}
-{% set sha256 = "21f7fe2fc5c2f214184ab050977ec7a8e304e58bfae2ab098fec69f8fabda9c1" %}
+{% set version = "2.4.2" %}
+{% set sha256 = "97eb47df8ae5a3ff744f868005a090da5ab45cb48ee9836dbf5ee739a4e5cf49" %}
 
 package:
   name: {{ name|lower }}
@@ -26,7 +26,7 @@ requirements:
     - bzip2
     - sqlite
     - libgcrypt
-    - libgpg-error <1.46
+    - libgpg-error
     - libksba
     - libassuan
     - ntbtls
@@ -62,3 +62,4 @@ extra:
   recipe-maintainers:
     - zklaus
     - mariusvniekerk
+    - xhochy
