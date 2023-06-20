@@ -1,0 +1,53 @@
+From: NIIBE Yutaka <gniibe@fsij.org>
+Date: Fri, 27 Aug 2021 01:06:01 +0000 (+0900)
+Subject: tools: Fix for RISC OS which doesn't allow COMMON section.
+X-Git-Url: http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=commitdiff_plain;h=a831f80e044a72e7db4e5e1855a5b97d85d2f90c;hp=467f057ad15cc12ce65d38ec65d8b1c574f11a69
+
+tools: Fix for RISC OS which doesn't allow COMMON section.
+
+* tools/bftest.c: Define INCLUDED_BY_MAIN_MODULE.
+* tools/mpicalc.c: Likewise.
+* tools/shmtest.c: Likewise.
+
+--
+
+GnuPG-bug-id: 5215
+Signed-off-by: NIIBE Yutaka <gniibe@fsij.org>
+---
+
+diff --git a/tools/bftest.c b/tools/bftest.c
+index 8a1572c2b..3c1d93bd9 100644
+--- a/tools/bftest.c
++++ b/tools/bftest.c
+@@ -26,6 +26,7 @@
+ #include <fcntl.h>
+ #endif
+ 
++#define INCLUDED_BY_MAIN_MODULE 1
+ #include "util.h"
+ #include "cipher.h"
+ #include "i18n.h"
+diff --git a/tools/mpicalc.c b/tools/mpicalc.c
+index 46e5fc824..e75d4af39 100644
+--- a/tools/mpicalc.c
++++ b/tools/mpicalc.c
+@@ -31,6 +31,7 @@
+ #include <stdlib.h>
+ #include <ctype.h>
+ 
++#define INCLUDED_BY_MAIN_MODULE 1
+ #include "util.h"
+ #include "mpi.h"
+ #include "i18n.h"
+diff --git a/tools/shmtest.c b/tools/shmtest.c
+index 76513cbcd..7bf5aa25d 100644
+--- a/tools/shmtest.c
++++ b/tools/shmtest.c
+@@ -25,6 +25,7 @@
+ #ifdef HAVE_SYS_SHM_H
+ #include <sys/shm.h>
+ #endif
++#define INCLUDED_BY_MAIN_MODULE 1
+ #include "util.h"
+ #include "ttyio.h"
+ #include "i18n.h"
