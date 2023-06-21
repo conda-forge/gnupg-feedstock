@@ -27,23 +27,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - make  # [unix]
-    - libgpg-error  # [build_platform != target_platform]
   host:
     - bzip2
-    - sqlite
-    - libgcrypt
-    - libksba
-    - libassuan
     - libcurl
-    - ntbtls
-    - npth
     - readline
     - libiconv
+    - libzlib
   run:
     - bzip2
-    - readline
-    - libiconv
-    - sqlite
 
 test:
   commands:
