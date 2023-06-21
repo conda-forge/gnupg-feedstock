@@ -1,6 +1,6 @@
 #!/bin/bash
 # Get an updated config.sub and config.guess
-cp $BUILD_PREFIX/share/gnuconfig/config.* ./build-aux
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./scripts
 
 set -x
 
@@ -11,6 +11,7 @@ fi
 
 ./configure \
     --prefix="$PREFIX" \
+    --program-suffix=1 \
     --with-libgpg-error-prefix="$PREFIX" \
     --with-ntbtls-prefix="$PREFIX"
 make
