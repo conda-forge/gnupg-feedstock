@@ -26,8 +26,6 @@ libiconv:
 - '1'
 readline:
 - '8'
-sqlite:
-- '3'
 target_platform:
 - linux-aarch64
 zip_keys:

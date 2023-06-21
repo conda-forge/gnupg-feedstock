@@ -22,8 +22,6 @@ libiconv:
 - '1'
 readline:
 - '8'
-sqlite:
-- '3'
 target_platform:
 - linux-ppc64le
 zip_keys:

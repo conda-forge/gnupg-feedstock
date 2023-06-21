@@ -22,8 +22,6 @@ macos_machine:
 - x86_64-apple-darwin13.4.0
 readline:
 - '8'
-sqlite:
-- '3'
 target_platform:
 - osx-64
 zip_keys:
