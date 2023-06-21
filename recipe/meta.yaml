@@ -32,9 +32,9 @@ requirements:
     - bzip2
     - sqlite
     - libgcrypt
-    - libgpg-error
     - libksba
     - libassuan
+    - libcurl
     - ntbtls
     - npth
     - readline
