@@ -1,5 +1,5 @@
 {% set name = "gnupg" %}
-{% set version = "2.4.5" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-{{ version }}.tar.bz2
-  sha256: f68f7d75d06cb1635c336d34d844af97436c3f64ea14bcb7c869782f96f44277
+  sha256: 2222c827d4e7087f15e7f72739d004abc1d05c6c5f0a5a12b24c6a6cc5d173fb
 
 build:
   number: 0
@@ -19,6 +19,7 @@ requirements:
   build:
     - gnuconfig  # [unix]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - make  # [unix]
     - libgpg-error  # [build_platform != target_platform]
