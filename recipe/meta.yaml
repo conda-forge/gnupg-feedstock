@@ -1,5 +1,5 @@
 {% set name = "gnupg" %}
-{% set version = "2.5.5" %}
+{% set version = "2.5.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-{{ version }}.tar.bz2
-  sha256: 7afa71d72ff9aaff75a6810b87b486bc492fd752e4f77b07c41759ce4ef36b31
+  sha256: 377f9d79af0ce494c0946dbe7c92197425bb522d7edd6f54acbc9869695131a8
 
 build:
   number: 0
