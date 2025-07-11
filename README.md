@@ -3,7 +3,7 @@ About gnupg-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gnupg-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.gnupg.org
+Home: https://www.gnupg.org/
 
 Package license: LGPL-3.0-or-later
 
@@ -16,7 +16,6 @@ access modules for all kinds of public key directories. GnuPG, also known as GPG
 is a command line tool with features for easy integration with other applications.
 A wealth of frontend applications and libraries are available. GnuPG also provides
 support for S/MIME and Secure Shell (ssh).
-
 
 Current build status
 ====================
