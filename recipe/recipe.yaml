@@ -1,28 +1,32 @@
-{% set name = "gnupg" %}
-{% set version = "2.5.8" %}
+schema_version: 1
+
+context:
+  name: gnupg
+  version: 2.5.9
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-{{ version }}.tar.bz2
-  sha256: 1d38938f3be7d2b4e2018476172d310f7ab07b30f652d62b14d081f86bbcd673
+  url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-${{ version }}.tar.bz2
+  sha256: 15ac4ba118a94c2cd8b6443b19731287343e8408dc29f359cbfaf43803ed634e
 
 build:
   number: 0
-  skip: true  # [win]
-  run_exports:
-    - {{ pin_subpackage('gnupg', max_pin='x.x') }}
+  skip: win
 
 requirements:
   build:
-    - gnuconfig  # [unix]
-    - {{ compiler('c') }}
-    - {{ stdlib("c") }}
-    - {{ compiler('cxx') }}
-    - make  # [unix]
-    - libgpg-error  # [build_platform != target_platform]
+    - if: unix
+      then: 
+       - gnuconfig
+       - make
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - if: build_platform != target_platform
+      then: libgpg-error
   host:
     - bzip2
     - sqlite
@@ -39,16 +43,16 @@ requirements:
     - readline
     - libiconv
     - sqlite
+  run_exports:
+    - ${{ pin_subpackage('gnupg', upper_bound='x.x') }}
 
-test:
-  commands:
-    - gpg --help
+tests:
+  - script:
+      - gpg --help
 
 about:
-  home: https://www.gnupg.org
   summary: The New GNU Privacy Guard
   license: LGPL-3.0-or-later
-  license_family: GPL
   license_file: COPYING
   description: |
     GnuPG is a complete and free implementation of the OpenPGP standard as defined
@@ -58,6 +62,9 @@ about:
     is a command line tool with features for easy integration with other applications.
     A wealth of frontend applications and libraries are available. GnuPG also provides
     support for S/MIME and Secure Shell (ssh).
+
+
+  homepage: https://www.gnupg.org
 
 extra:
   recipe-maintainers:
