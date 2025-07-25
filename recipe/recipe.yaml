@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: gnupg
-  version: 2.5.9
+  version: "2.5.10"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-${{ version }}.tar.bz2
-  sha256: 15ac4ba118a94c2cd8b6443b19731287343e8408dc29f359cbfaf43803ed634e
+  sha256: 5a2f2faf411bbf87ed1a3e557cf20e05f75b050b3ae8a5ef7837aabd065f9d70
 
 build:
   number: 0
@@ -19,9 +19,9 @@ build:
 requirements:
   build:
     - if: unix
-      then: 
-       - gnuconfig
-       - make
+      then:
+        - gnuconfig
+        - make
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('cxx') }}
