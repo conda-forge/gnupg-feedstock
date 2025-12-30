@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: gnupg
-  version: "2.5.14"
+  version: "2.5.16"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-${{ version }}.tar.bz2
-  sha256: 25a622e625a1cc9078b5e3f7adf2bd02b86759170e2fbb8542bca8e907214610
+  sha256: 05144040fedb828ced2a6bafa2c4a0479ee4cceacf3b6d68ccc75b175ac13b7e
 
 build:
   number: 0
