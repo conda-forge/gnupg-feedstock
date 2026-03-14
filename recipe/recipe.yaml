@@ -13,7 +13,7 @@ source:
   sha256: 0dbd64e0322fe1a4813360d46539d5f8daf4a8fa235cf5fce464e8b0214a7e4f
 
 build:
-  number: 0
+  number: 1
   skip: win
 
 requirements:
@@ -22,6 +22,7 @@ requirements:
       then:
         - gnuconfig
         - make
+        - pkg-config
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('cxx') }}
@@ -49,6 +50,7 @@ requirements:
 tests:
   - script:
       - gpg --help
+      - ${CONDA_PREFIX}/libexec/keyboxd --version
 
 about:
   summary: The New GNU Privacy Guard
@@ -62,7 +64,6 @@ about:
     is a command line tool with features for easy integration with other applications.
     A wealth of frontend applications and libraries are available. GnuPG also provides
     support for S/MIME and Secure Shell (ssh).
-
 
   homepage: https://www.gnupg.org
 
